@@ -1,0 +1,28 @@
+@startuml 
+actor User 
+participant "Application" as App 
+participant "Server" as Server 
+participant "Delivery Department" as Delivery 
+ 
+User -> App: Open the application 
+App -> Server: Login to account or register 
+User -> App: View catalog or use search 
+App -> Server: Retrieve available products 
+User -> App: Select products 
+User -> App: Add to cart 
+App -> Server: Add products to cart 
+User -> App: View cart contents 
+App -> Server: Retrieve cart contents 
+User -> App: Modify quantity or remove products 
+User -> App: Place an order 
+App -> Server: Register the order 
+Server -> App: Order cost information 
+User -> App: View order cost information 
+User -> App: Choose payment method 
+User -> App: Enter necessary information 
+User -> App: Confirm the order 
+App -> Server: Process payment and confirm the order 
+Server -> Delivery: Transfer the order to the delivery department 
+Delivery -> User: Prepare and deliver the products 
+ 
+@enduml
